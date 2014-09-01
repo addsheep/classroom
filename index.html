@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Classroom</title>
+  <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/chessboard-0.3.0.min.js"></script>
+  <link rel="stylesheet" href="css/chessboard.css">
+</head>
+
+<body>
+<div id="board-id" style="width: 400px"></div>
+
+<script type="text/javascript">
+  var test = '{{ test }}';
+
+  var board = new ChessBoard('board-id', {
+    draggable: true,
+    dropOffBoard: 'trash',
+    sparePieces: false
+  });
+  board.start();
+</script>
+
+</body>
+</html>
