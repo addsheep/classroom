@@ -2,23 +2,33 @@
 <html>
 <head>
   <title>Classroom</title>
-  <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="js/chessboard-0.3.0.min.js"></script>
+  <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+  <script src="http://simplewebrtc.com/latest.js"></script>
+  <script src="js/main.js"></script>
+
   <link rel="stylesheet" href="css/chessboard.css">
+  <link rel="stylesheet" href="css/jquery-ui.min.css">
 </head>
 
 <body>
-<div id="board-id" style="width: 400px"></div>
+<div id="joinRoom">
+Enter a room name to start
+  <input type=text id="roomName"></input>
+  <input type=button onclick='onJoin()' value="Join"></input>
+</div>
+
+<div id="workspace" style="display:none">
+  <div id="videos">
+    <video height="100" width="100" id="localVideo"></video>
+    <div id="remoteVideo"></div>
+  </div>
+  <div id="chessboard" style="width: 300px"></div>
+</div>
 
 <script type="text/javascript">
   var test = '{{ test }}';
-
-  var board = new ChessBoard('board-id', {
-    draggable: true,
-    dropOffBoard: 'trash',
-    sparePieces: false
-  });
-  board.start();
 </script>
 
 </body>
